@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角社区-海角社区热门帖子_社区讨论与内容分区</title>
+<meta name="description" content="海角社区首页汇集社区热门帖子、内容分区与讨论入口，按主题浏览用户分享与观点，了解海角社区的内容组织与使用方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e2a3a'/%3E%3Cpath d='M14 40c8-12 28-12 36 0' stroke='%235fd3c0' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='24' r='7' fill='%23f2b95c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#10222e;
+  --ink-soft:#3c5566;
+  --sea:#0e2a3a;
+  --teal:#1f8f83;
+  --teal-l:#5fd3c0;
+  --sand:#f4efe6;
+  --amber:#f2b95c;
+  --line:#dfe6ea;
+  --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--sand);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,92vw);margin:0 auto}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,42,58,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{display:flex;align-items:center;gap:24px;height:66px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.15rem;letter-spacing:.5px}
+.brand svg{width:32px;height:32px;flex:none}
+.navlinks{display:flex;gap:26px;font-size:.93rem;color:#c9dce4}
+.navlinks a{padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+.navlinks a:hover,.navlinks a:focus-visible{color:#fff;border-bottom-color:var(--teal-l)}
+.nav-cta{
+  background:var(--teal);color:#fff;padding:8px 18px;border-radius:999px;
+  font-size:.88rem;font-weight:600;white-space:nowrap;transition:.2s;
+}
+.nav-cta:hover{background:#26a596}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(95,211,192,.28),transparent 70%),
+    radial-gradient(600px 300px at 8% 110%,rgba(242,185,92,.18),transparent 70%),
+    linear-gradient(160deg,#0e2a3a,#12384b 60%,#0d2b3a);
+  color:#eaf5f4;padding:64px 0 72px;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:2px;
+  color:var(--teal-l);border:1px solid rgba(95,211,192,.4);
+  padding:5px 14px;border-radius:999px;margin-bottom:20px;
+}
+h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.2;letter-spacing:1px;font-weight:800;color:#fff}
+.hero p.lead{margin-top:18px;font-size:1.02rem;color:#bcd4dc;max-width:34em}
+.hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:12px 26px;border-radius:10px;font-weight:600;font-size:.95rem;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-main{background:var(--amber);color:#2a1c05}
+.btn-main:hover{background:#f7c979}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#eaf5f4}
+.btn-ghost:hover{border-color:var(--teal-l);color:#fff}
+.hero-figure{position:relative}
+.hero-figure svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 34px rgba(0,0,0,.35))}
+
+/* sections */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.35rem,2.4vw,1.75rem);font-weight:800;letter-spacing:.5px}
+.sec-head h2 span{color:var(--teal)}
+.sec-head p{color:var(--ink-soft);font-size:.93rem;max-width:38em}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;
+  transition:.25s;display:flex;flex-direction:column;gap:10px;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(16,34,46,.09);border-color:#c7d6dd}
+.card .tag{font-size:.75rem;letter-spacing:1px;color:var(--teal);font-weight:700}
+.card h3{font-size:1.06rem;font-weight:700;line-height:1.5}
+.card p{font-size:.9rem;color:var(--ink-soft)}
+.card .meta{margin-top:auto;font-size:.8rem;color:#8aa0ad;display:flex;gap:14px;padding-top:8px;border-top:1px dashed var(--line)}
+
+/* topic list */
+.topic-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.topic{
+  display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+}
+.topic .num{font-size:1.3rem;font-weight:800;color:var(--teal-l);line-height:1.2;min-width:2ch}
+.topic h3{font-size:.98rem;margin-bottom:4px}
+.topic p{font-size:.86rem;color:var(--ink-soft)}
+
+/* search */
+.searchbar{
+  display:flex;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:8px;max-width:560px;
+}
+.searchbar input{
+  flex:1;border:0;outline:none;padding:10px 14px;font-size:.95rem;font-family:inherit;
+  color:var(--ink);background:transparent;
+}
+.searchbar button{
+  border:0;background:var(--sea);color:#fff;padding:10px 22px;border-radius:8px;
+  font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;
+}
+.searchbar button:hover{background:var(--teal)}
+#searchResult{margin-top:14px;font-size:.88rem;color:var(--ink-soft);min-height:1.4em}
+
+/* about band */
+.band{background:var(--sea);color:#d6e7ec}
+.band .grid2{align-items:start;gap:44px}
+.band h2{color:#fff;font-size:clamp(1.35rem,2.4vw,1.7rem);margin-bottom:18px}
+.band p{font-size:.95rem;color:#b7cdd6;margin-bottom:14px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+.fact{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px}
+.fact b{display:block;color:var(--teal-l);font-size:1.05rem;margin-bottom:2px}
+.fact span{font-size:.82rem;color:#a9c2cc}
+
+/* dl box */
+.dl{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:linear-gradient(120deg,#12384b,#0e2a3a);color:#eaf5f4;
+  border-radius:16px;padding:32px 34px;
+}
+.dl h3{font-size:1.2rem;color:#fff;margin-bottom:6px}
+.dl p{font-size:.88rem;color:#b7cdd6;max-width:40em}
+.dl-btn{
+  background:var(--teal-l);color:#0b2a36;font-weight:700;padding:12px 30px;border-radius:10px;
+  font-size:.95rem;white-space:nowrap;pointer-events:none;opacity:.9;
+}
+
+/* footer */
+footer{background:#0a1f2b;color:#8fa9b5;padding:44px 0 34px;font-size:.86rem}
+.foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:10px}
+.foot-brand svg{width:26px;height:26px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;color:#a9c2cc}
+.foot-links a:hover{color:var(--teal-l)}
+.copy{margin-top:20px;font-size:.8rem;color:#6d8795}
+
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-figure{max-width:420px}
+  .grid3{grid-template-columns:1fr 1fr}
+  .grid2{grid-template-columns:1fr}
+  .topic-list{grid-template-columns:1fr}
+  .band .grid2{gap:26px}
+}
+@media (max-width:640px){
+  .navlinks{display:none}
+  .menu-btn{display:block}
+  .nav.open .navlinks{
+    display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;
+    background:var(--sea);padding:18px 6vw 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .nav{position:relative}
+  .nav-cta{display:none}
+  .grid3{grid-template-columns:1fr}
+  .hero{padding:44px 0 52px}
+  section{padding:48px 0}
+  .dl{padding:26px 22px}
+  .searchbar{flex-direction:column}
+  .searchbar button{width:100%}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav" id="nav">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0e2a3a"/>
+        <path d="M14 40c8-12 28-12 36 0" stroke="#5fd3c0" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="32" cy="24" r="7" fill="#f2b95c"/>
+      </svg>
+      <span>海角社区</span>
+    </a>
+    <nav class="navlinks" aria-label="主导航">
+      <a href="#hot">热门帖子</a>
+      <a href="#zones">内容分区</a>
+      <a href="#guide">参与方式</a>
+      <a href="#about">关于社区</a>
+    </nav>
+    <a class="nav-cta" href="#hot">浏览热门</a>
+    <button class="menu-btn" id="menuBtn" aria-label="展开导航" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">社区首页 · 内容与讨论</span>
+        <h1>海角社区</h1>
+        <p class="lead">海角社区是一个以话题分区组织内容的交流空间。这里汇集热门帖子、生活分享与观点讨论，你可以按分区浏览，也可以围绕感兴趣的话题展开对话。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#hot">看热门帖子</a>
+          <a class="btn btn-ghost" href="#zones">进入内容分区</a>
+        </div>
+      </div>
+      <div class="hero-figure" aria-hidden="true">
+        <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1b4b60"/>
+              <stop offset="1" stop-color="#0e2a3a"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="420" height="320" rx="18" fill="url(#sky)"/>
+          <circle cx="318" cy="72" r="30" fill="#f2b95c" opacity=".92"/>
+          <circle cx="318" cy="72" r="44" fill="none" stroke="#f2b95c" stroke-width="1.5" opacity=".35"/>
+          <path d="M0 214c60-26 120-22 180-6s140 14 240-18v130H0z" fill="#16455a"/>
+          <path d="M0 240c70-20 130-14 190 2s130 10 230-16v94H0z" fill="#103544"/>
+          <path d="M0 262c80-14 150-6 210 6s120 2 210-14v66H0z" fill="#0b2a37"/>
+          <!-- community cards on shore -->
+          <g>
+            <rect x="56" y="150" width="86" height="58" rx="8" fill="#ffffff" opacity=".94"/>
+            <rect x="68" y="164" width="52" height="6" rx="3" fill="#1f8f83"/>
+            <rect x="68" y="178" width="62" height="5" rx="2.5" fill="#c9d9df"/>
+            <rect x="68" y="190" width="44" height="5" rx="2.5" fill="#c9d9df"/>
+            <rect x="160" y="128" width="86" height="58" rx="8" fill="#ffffff" opacity=".9"/>
+            <rect x="172" y="142" width="52" height="6" rx="3" fill="#f2b95c"/>
+            <rect x="172" y="156" width="62" height="5" rx="2.5" fill="#c9d9df"/>
+            <rect x="172" y="168" width="40" height="5" rx="2.5" fill="#c9d9df"/>
+          </g>
+          <path d="M250 150l22-28 22 28z" fill="#5fd3c0" opacity=".85"/>
+          <rect x="262" y="150" width="20" height="26" fill="#5fd3c0" opacity=".55"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>海角社区<span>热门帖子</span></h2>
+        <p>以下为社区内讨论度较高的内容方向，覆盖日常记录、经验交流与兴趣分享。条目按主题归类，便于快速找到想读的部分。</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <span class="tag">生活记录</span>
+          <h3>城市居住体验的长期记录</h3>
+          <p>作者连续记录通勤、租房与周边生活的变化，回帖中补充了不少关于生活成本与节奏的对照经验，适合准备换城市的人参考。</p>
+          <div class="meta"><span>讨论型</span><span>生活分区</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">兴趣交流</span>
+          <h3>摄影与户外路线怎么选</h3>
+          <p>帖子以实拍图片为主线，说明不同季节与时段的光线差别，评论区整理出多条可复用的路线建议，是户外分区里互动较密的内容。</p>
+          <div class="meta"><span>图片型</span><span>兴趣分区</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">经验分享</span>
+          <h3>自学一门技能的推进节奏</h3>
+          <p>从目标拆解到每日练习时长，作者给出自己的安排方式，并说明中途调整的原因。跟帖者提供了不同进度的对照方案。</p>
+          <div class="meta"><span>长文型</span><span>学习分区</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section id="zones" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>内容分区与<span>浏览入口</span></h2>
+        <p>海角社区用分区来组织不同性质的内容。每个分区有各自的发布习惯与讨论氛围，进入前可以先看该分区的置顶说明。</p>
+      </div>
+      <div class="topic-list">
+        <div class="topic">
+          <div class="num">01</div>
+          <div>
+            <h3>生活日常</h3>
+            <p>记录居住、饮食、通勤与家庭小事，偏向真实细节与可复用的生活经验。</p>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">02</div>
+          <div>
+            <h3>兴趣同好</h3>
+            <p>摄影、运动、阅读、手作等方向的内容集中区，图片与过程记录占比较高。</p>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">03</div>
+          <div>
+            <h3>学习成长</h3>
+            <p>技能自学、读书笔记与效率方法的交流空间，长篇分享与阶段复盘较多。</p>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="num">04</div>
+          <div>
+            <h3>观点讨论</h3>
+            <p>围绕社会话题与生活议题展开的理性讨论，回帖质量取决于参与者是否给出依据。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE / SEARCH -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>在海角社区<span>找内容与参与讨论</span></h2>
+        <p>先确定想看的分区，再用关键词缩小范围。搜索基于页面内已列出的主题条目，输入分区名或内容方向即可定位。</p>
+      </div>
+      <div class="searchbar" role="search">
+        <label for="q" style="position:absolute;left:-9999px">搜索社区内容</label>
+        <input id="q" type="search" placeholder="试试输入：摄影 / 学习 / 生活 / 观点">
+        <button id="searchBtn" type="button">查找内容</button>
+      </div>
+      <p id="searchResult" aria-live="polite"></p>
+
+      <div class="grid2" style="margin-top:34px">
+        <div class="card">
+          <span class="tag">参与方式</span>
+          <h3>发帖前先读分区说明</h3>
+          <p>每个分区对标题格式与内容范围有约定。写清背景与目的，附上必要信息，能减少反复追问，也让讨论更快进入实质内容。</p>
+        </div>
+        <div class="card">
+          <span class="tag">阅读方式</span>
+          <h3>按主题建立自己的收藏线索</h3>
+          <p>看到有价值的长帖，可以顺着作者的其他发帖浏览。同一主题下的多条记录连起来读，信息密度通常高于零散浏览。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="band">
+    <div class="wrap">
+      <div class="grid2">
+        <div>
+          <h2>关于海角社区的内容组织</h2>
+          <p>海角社区以用户发布的内容为主体，首页承担索引与导览的作用：把讨论度较高的帖子、清晰的分区结构与参与规则放在一起，让第一次访问的人也能判断从哪里开始读。</p>
+          <p>社区内容的质量来自具体细节。描述清楚场景、时间与条件的帖子，往往比只有结论的帖子更容易获得有效回应。这也是海角社区在分区说明中反复强调的一点。</p>
+        </div>
+        <div>
+          <div class="facts">
+            <div class="fact"><b>4 个</b><span>首页展示的内容分区</span></div>
+            <div class="fact"><b>3 类</b><span>热门帖子内容形态</span></div>
+            <div class="fact"><b>分区制</b><span>按主题归类的浏览方式</span></div>
+            <div class="fact"><b>用户发布</b><span>内容的主要来源</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section>
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h3>海角社区客户端</h3>
+          <p>客户端用于在移动端浏览分区与跟进讨论，具体版本与支持范围以发布页面说明为准。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#12384b"/>
+            <path d="M14 40c8-12 28-12 36 0" stroke="#5fd3c0" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="32" cy="24" r="7" fill="#f2b95c"/>
+          </svg>
+          <span>海角社区</span>
+        </div>
+        <p>以分区组织内容，以讨论连接话题。</p>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#hot">热门帖子</a>
+        <a href="#zones">内容分区</a>
+        <a href="#guide">参与方式</a>
+        <a href="#about">关于社区</a>
+      </nav>
+    </div>
+    <p class="copy">海角社区首页 · 内容以用户发布为准，页面信息随社区更新调整。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.navlinks a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  var data = [
+    {keys:['摄影','户外','图片','路线'], name:'摄影与户外路线怎么选', zone:'兴趣分区'},
+    {keys:['学习','技能','自学','成长'], name:'自学一门技能的推进节奏', zone:'学习分区'},
+    {keys:['生活','居住','通勤','租房'], name:'城市居住体验的长期记录', zone:'生活分区'},
+    {keys:['观点','讨论','议题'], name:'观点讨论分区的参与规则', zone:'观点分区'},
+    {keys:['兴趣','同好'], name:'兴趣同好分区的内容范围', zone:'兴趣分区'}
+  ];
+  var input = document.getElementById('q');
+  var out = document.getElementById('searchResult');
+  function run(){
+    var v = input.value.trim();
+    if(!v){ out.textContent = '输入分区名或内容方向，例如“摄影”“学习”。'; return; }
+    var hit = data.filter(function(d){
+      return d.keys.some(function(k){ return k.indexOf(v) > -1 || v.indexOf(k) > -1; }) || d.name.indexOf(v) > -1;
+    });
+    if(hit.length){
+      out.textContent = '找到 ' + hit.length + ' 条相关内容：' + hit.map(function(h){ return h.name + '（' + h.zone + '）'; }).join('；');
+    }else{
+      out.textContent = '暂未在首页条目中找到匹配内容，可先进入内容分区按主题浏览。';
+    }
+  }
+  document.getElementById('searchBtn').addEventListener('click', run);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); run(); } });
+})();
+</script>
+</body>
+</html>
