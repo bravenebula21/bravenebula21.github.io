@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日黑料大赛入口-黑料大赛每日入口_吃瓜黑料热点合集</title>
+<meta name="description" content="每日黑料大赛入口汇总每日吃瓜黑料热点，提供当日黑料大赛入口导航、热门黑料榜单与网友讨论精选，方便快速找到每日黑料大赛入口与热点内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b26'/%3E%3Ccircle cx='24' cy='26' r='8' fill='%23ff5c5c'/%3E%3Ccircle cx='42' cy='38' r='8' fill='%23ffd166'/%3E%3Cpath d='M14 50c8-10 28-10 36 0' stroke='%23ff5c5c' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#12121a;
+  --bg-soft:#1b1b26;
+  --card:#20202c;
+  --line:#2e2e3e;
+  --text:#ececf2;
+  --muted:#a3a3b8;
+  --red:#ff5c5c;
+  --yellow:#ffd166;
+  --mint:#5ce1c1;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+.muted{color:var(--muted);}
+.tag{
+  display:inline-block;font-size:12px;letter-spacing:.06em;
+  padding:3px 10px;border-radius:999px;background:rgba(255,92,92,.14);
+  color:var(--red);border:1px solid rgba(255,92,92,.3);
+}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,18,26,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;height:66px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:.02em;white-space:nowrap;}
+.brand svg{width:32px;height:32px;flex:none;}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted);}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{
+  font-size:14px;font-weight:600;padding:8px 16px;border-radius:999px;
+  background:var(--red);color:#fff;transition:transform .2s,box-shadow .2s;
+  box-shadow:0 6px 18px rgba(255,92,92,.25);white-space:nowrap;
+}
+.nav-cta:hover{transform:translateY(-1px);}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:6px 10px;font-size:13px;cursor:pointer;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(600px 300px at 12% -10%,rgba(255,92,92,.18),transparent 70%),
+    radial-gradient(500px 280px at 88% 0%,rgba(92,225,193,.12),transparent 70%);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;
+  align-items:center;padding:64px 0 60px;
+}
+.hero h1{font-size:clamp(28px,4.4vw,46px);line-height:1.25;font-weight:800;letter-spacing:-.01em;margin-bottom:18px;}
+.hero h1 .hl{color:var(--red);}
+.hero p.lead{font-size:16px;color:var(--muted);max-width:34em;margin-bottom:26px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;
+  background:linear-gradient(135deg,#ff5c5c,#ff8358);color:#fff;
+  box-shadow:0 10px 26px rgba(255,92,92,.28);transition:transform .2s;
+}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:12px;font-weight:600;font-size:14px;
+  border:1px solid var(--line);color:var(--text);background:var(--bg-soft);
+  transition:border-color .2s;
+}
+.btn-ghost:hover{border-color:var(--red);}
+.hero-stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap;}
+.hero-stats div b{display:block;font-size:22px;color:var(--yellow);}
+.hero-stats div span{font-size:13px;color:var(--muted);}
+.hero-art{
+  border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  background:var(--bg-soft);padding:18px;
+}
+.hero-art svg{width:100%;height:auto;}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap;}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:-.01em;}
+.sec-head h2 small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:6px;letter-spacing:.02em;}
+.sec-head .more{font-size:14px;color:var(--mint);white-space:nowrap;}
+
+/* entry cards */
+.entries{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;display:flex;flex-direction:column;gap:12px;
+  transition:transform .2s,border-color .2s;
+}
+.entry:hover{transform:translateY(-3px);border-color:rgba(255,92,92,.5);}
+.entry .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,92,92,.14);}
+.entry h3{font-size:17px;font-weight:700;}
+.entry p{font-size:14px;color:var(--muted);flex:1;}
+.entry .go{font-size:14px;font-weight:600;color:var(--red);}
+
+/* hot list */
+.hot-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:22px;align-items:start;}
+.hot-list{list-style:none;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);}
+.hot-list li{
+  display:flex;align-items:center;gap:16px;padding:16px 20px;
+  border-bottom:1px solid var(--line);transition:background .2s;
+}
+.hot-list li:last-child{border-bottom:none;}
+.hot-list li:hover{background:#262634;}
+.rank{
+  flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+  font-size:13px;font-weight:800;background:var(--bg-soft);color:var(--muted);
+}
+.hot-list li:nth-child(1) .rank{background:var(--red);color:#fff;}
+.hot-list li:nth-child(2) .rank{background:var(--yellow);color:#1b1b26;}
+.hot-list li:nth-child(3) .rank{background:var(--mint);color:#1b1b26;}
+.hot-list .txt{flex:1;min-width:0;}
+.hot-list .txt b{display:block;font-size:15px;font-weight:600;}
+.hot-list .txt span{font-size:13px;color:var(--muted);}
+.hot-list .heat{font-size:12px;color:var(--red);white-space:nowrap;}
+.side-card{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:14px;
+}
+.side-card h3{font-size:16px;}
+.side-card p{font-size:13.5px;color:var(--muted);}
+.side-card .mini{display:flex;justify-content:space-between;font-size:13.5px;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted);}
+.side-card .mini b{color:var(--text);font-weight:600;}
+
+/* guide / article blocks */
+.blocks{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.block{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;
+}
+.block h3{font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+.block h3::before{content:"";width:6px;height:18px;border-radius:3px;background:var(--red);}
+.block p{font-size:14.5px;color:var(--muted);}
+.block p + p{margin-top:10px;}
+
+/* search */
+.search-box{
+  display:flex;gap:10px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:8px 8px 8px 18px;max-width:560px;
+}
+.search-box input{
+  flex:1;background:none;border:none;outline:none;color:var(--text);font-size:15px;
+  font-family:inherit;min-width:0;
+}
+.search-box input::placeholder{color:#6d6d84;}
+.search-box button{
+  border:none;cursor:pointer;padding:9px 20px;border-radius:10px;
+  background:var(--red);color:#fff;font-size:14px;font-weight:600;font-family:inherit;
+}
+.result-hint{margin-top:14px;font-size:13.5px;color:var(--muted);min-height:22px;}
+.result-hint b{color:var(--mint);}
+
+/* download */
+.dl-band{
+  border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  background:linear-gradient(135deg,#1f1f2c,#191922);
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  padding:34px 32px;
+}
+.dl-band h2{font-size:21px;margin-bottom:8px;}
+.dl-band p{font-size:14px;color:var(--muted);max-width:38em;}
+.btn-dl{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 30px;border-radius:12px;font-weight:700;font-size:15px;
+  background:var(--yellow);color:#1b1b26;pointer-events:none;opacity:.85;
+}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:38px 0 30px;margin-top:20px;background:#0e0e15;}
+.foot-top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line);}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;}
+.foot-brand svg{width:26px;height:26px;}
+.foot-links{display:flex;gap:24px;font-size:13.5px;color:var(--muted);flex-wrap:wrap;}
+.foot-links a:hover{color:var(--text);}
+.foot-bottom{padding-top:20px;font-size:12.5px;color:#6d6d84;line-height:1.9;}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding:42px 0 44px;}
+  .hero-art{max-width:420px;}
+  .entries{grid-template-columns:1fr 1fr;}
+  .hot-grid{grid-template-columns:1fr;}
+  .blocks{grid-template-columns:1fr;}
+  .dl-band{grid-template-columns:1fr;padding:28px 22px;}
+}
+@media (max-width:680px){
+  .nav-links{display:none;}
+  .nav-links.open{
+    display:flex;position:absolute;top:66px;left:0;right:0;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:#16161f;border-bottom:1px solid var(--line);padding:8px 20px 16px;
+  }
+  .nav-links.open a{padding:11px 0;width:100%;font-size:15px;color:var(--text);}
+  .menu-btn{display:block;}
+  .nav-cta{display:none;}
+  .entries{grid-template-columns:1fr;}
+  .hero h1{font-size:27px;}
+  section{padding:40px 0;}
+  .hot-list .heat{display:none;}
+  .hero-stats{gap:20px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="每日黑料大赛入口 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b1b26" stroke="#2e2e3e"/>
+        <circle cx="24" cy="25" r="7.5" fill="#ff5c5c"/>
+        <circle cx="42" cy="37" r="7.5" fill="#ffd166"/>
+        <path d="M14 50c8-10 28-10 36 0" stroke="#ff5c5c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span>每日黑料大赛入口</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#entries">入口导航</a>
+      <a href="#hot">今日热榜</a>
+      <a href="#about">黑料看点</a>
+      <a href="#search">站内搜索</a>
+      <a href="#download">下载专区</a>
+    </nav>
+    <a class="nav-cta" href="#entries">进入今日入口</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">菜单</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="tag">今日已更新 · 热点吃瓜</span>
+        <h1 style="margin-top:14px;">每日黑料大赛入口</h1>
+        <p class="lead">这里是每日黑料大赛入口的集中导航页。每天整理一轮吃瓜黑料热点，把入口、榜单与讨论要点放在同一处，打开页面就能顺着入口往下看，省去来回翻找的麻烦。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#entries">查看今日入口
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn-ghost" href="#hot">先看热榜</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>每日</b><span>入口更新节奏</span></div>
+          <div><b>3 类</b><span>入口分类</span></div>
+          <div><b>10 条</b><span>热榜展示位</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 320">
+          <rect x="0" y="0" width="420" height="320" rx="18" fill="#1b1b26"/>
+          <rect x="26" y="26" width="368" height="52" rx="12" fill="#262634"/>
+          <circle cx="52" cy="52" r="12" fill="#ff5c5c"/>
+          <rect x="76" y="44" width="120" height="8" rx="4" fill="#3a3a50"/>
+          <rect x="76" y="58" width="76" height="6" rx="3" fill="#2e2e3e"/>
+          <rect x="300" y="42" width="70" height="20" rx="10" fill="#ff5c5c" opacity=".85"/>
+          <rect x="26" y="94" width="176" height="98" rx="12" fill="#20202c" stroke="#2e2e3e"/>
+          <circle cx="52" cy="120" r="9" fill="#ffd166"/>
+          <rect x="70" y="114" width="100" height="8" rx="4" fill="#3a3a50"/>
+          <rect x="44" y="140" width="140" height="6" rx="3" fill="#2e2e3e"/>
+          <rect x="44" y="154" width="112" height="6" rx="3" fill="#2e2e3e"/>
+          <rect x="44" y="170" width="60" height="8" rx="4" fill="#ff5c5c" opacity=".7"/>
+          <rect x="218" y="94" width="176" height="98" rx="12" fill="#20202c" stroke="#2e2e3e"/>
+          <circle cx="244" cy="120" r="9" fill="#5ce1c1"/>
+          <rect x="262" y="114" width="100" height="8" rx="4" fill="#3a3a50"/>
+          <rect x="236" y="140" width="140" height="6" rx="3" fill="#2e2e3e"/>
+          <rect x="236" y="154" width="96" height="6" rx="3" fill="#2e2e3e"/>
+          <rect x="236" y="170" width="60" height="8" rx="4" fill="#5ce1c1" opacity=".6"/>
+          <rect x="26" y="208" width="368" height="86" rx="12" fill="#20202c" stroke="#2e2e3e"/>
+          <rect x="46" y="228" width="14" height="14" rx="4" fill="#ff5c5c"/>
+          <rect x="72" y="230" width="150" height="8" rx="4" fill="#3a3a50"/>
+          <rect x="46" y="256" width="14" height="14" rx="4" fill="#ffd166"/>
+          <rect x="72" y="258" width="190" height="8" rx="4" fill="#2e2e3e"/>
+          <rect x="46" y="284" width="14" height="14" rx="4" fill="#5ce1c1"/>
+          <rect x="72" y="286" width="120" height="8" rx="4" fill="#2e2e3e"/>
+          <rect x="318" y="228" width="56" height="18" rx="9" fill="#ff5c5c" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRIES -->
+  <section id="entries">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>每日黑料大赛入口导航
+          <small>按入口类型分组，选择你习惯的那种方式进入今日内容</small>
+        </h2>
+        <a class="more" href="#hot">直接看热榜 →</a>
+      </div>
+      <div class="entries">
+        <div class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#ff5c5c" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>总入口 · 每日更新</h3>
+          <p>每日黑料大赛入口的主通道，按日期顺序排列当日热点条目，适合每天固定来翻一遍的读者。</p>
+          <a class="go" href="#hot">进入总入口</a>
+        </div>
+        <div class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" stroke="#ffd166" stroke-width="1.9" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>热榜入口 · 高热度优先</h3>
+          <p>把讨论量最集中的黑料排在前面，适合只想快速抓重点、没时间逐条浏览的访问者。</p>
+          <a class="go" href="#hot">打开热榜</a>
+        </div>
+        <div class="entry">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#5ce1c1" stroke-width="2.1"/><path d="M16.5 16.5L21 21" stroke="#5ce1c1" stroke-width="2.1" stroke-linecap="round"/></svg>
+          </div>
+          <h3>搜索入口 · 按关键词找</h3>
+          <p>记得住事件名却找不到位置时，用站内搜索按关键词定位，再回到每日黑料大赛入口对应条目。</p>
+          <a class="go" href="#search">开始搜索</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT LIST -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日黑料热榜
+          <small>按页面展示顺序排列的十条热点条目，序号仅代表本期排位</small>
+        </h2>
+      </div>
+      <div class="hot-grid">
+        <ol class="hot-list">
+          <li><span class="rank">1</span><span class="txt"><b>某剧组合照引发阵容猜测</b><span>讨论集中在人员变动与拍摄进度</span></span><span class="heat">高热</span></li>
+          <li><span class="rank">2</span><span class="txt"><b>代言调整被解读为合约变化</b><span>品牌方与工作室均未公开回应</span></span><span class="heat">高热</span></li>
+          <li><span class="rank">3</span><span class="txt"><b>综艺剪辑片段被反复回看</b><span>网友对现场细节存在不同理解</span></span><span class="heat">升温</span></li>
+          <li><span class="rank">4</span><span class="txt"><b>旧访谈内容被重新翻出</b><span>早期表述与近期说法形成对照</span></span><span class="heat">升温</span></li>
+          <li><span class="rank">5</span><span class="txt"><b>社交账号互动痕迹受关注</b><span>点赞与取关时间线被梳理</span></span><span class="heat">升温</span></li>
+          <li><span class="rank">6</span><span class="txt"><b>活动座位安排引发联想</b><span>现场照片角度差异带来讨论</span></span><span class="heat">平稳</span></li>
+          <li><span class="rank">7</span><span class="txt"><b>工作室声明用词被逐句分析</b><span>措辞变化成为关注焦点</span></span><span class="heat">平稳</span></li>
+          <li><span class="rank">8</span><span class="txt"><b>路透照片与官方物料对比</b><span>画面细节被放大查看</span></span><span class="heat">平稳</span></li>
+          <li><span class="rank">9</span><span class="txt"><b>粉丝站关闭引发后续猜测</b><span>关闭公告未说明具体原因</span></span><span class="heat">平稳</span></li>
+          <li><span class="rank">10</span><span class="txt"><b>直播口误片段被单独剪辑</b><span>上下文完整版随后被补充</span></span><span class="heat">回落</span></li>
+        </ol>
+        <aside class="side-card">
+          <h3>热榜怎么看</h3>
+          <p>热榜只反映页面展示顺序，不等于事实结论。看到感兴趣的条目，先确认是否有当事人回应，再判断信息完整度。</p>
+          <div class="mini"><span>更新频率</span><b>每日一轮</b></div>
+          <div class="mini"><span>展示条数</span><b>10 条</b></div>
+          <div class="mini"><span>入口状态</span><b>正常开放</b></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>黑料看点与阅读提示
+          <small>入口之外，先把这几点弄明白，吃瓜效率更高</small>
+        </h2>
+      </div>
+      <div class="blocks">
+        <div class="block">
+          <h3>入口每天什么时候看</h3>
+          <p>每日黑料大赛入口的内容按天归集，通常一天内会出现多轮补充。建议在固定时间打开一次，先看热榜前三条，再决定是否往下翻。</p>
+          <p>如果某条内容在半天内反复出现，说明它正在被大量讨论，值得留意是否有后续回应。</p>
+        </div>
+        <div class="block">
+          <h3>怎样判断一条黑料的可信度</h3>
+          <p>先看信息是否有明确出处，再看当事人或相关方是否回应。只有单方面说法、缺少时间地点的内容，先当作讨论素材看待更稳妥。</p>
+          <p>截图、剪辑片段容易被截断语境，遇到这类材料，最好找到完整版本再下判断。</p>
+        </div>
+        <div class="block">
+          <h3>入口之外的延伸阅读</h3>
+          <p>热榜条目背后的时间线往往比标题复杂。顺着每日黑料大赛入口找到原始讨论，再对照前后几天的内容，能看出说法是否有变化。</p>
+          <p>对已经出现澄清的内容，建议以澄清版本为准，不必继续传播旧说法。</p>
+        </div>
+        <div class="block">
+          <h3>搜索不到时怎么办</h3>
+          <p>关键词记错是常见情况。可以只输入核心人名或事件名的一段，减少限定词，再从结果里挑最接近的条目。</p>
+          <p>也可以回到热榜，按时间顺序往下看，很多内容只是换了标题，实际仍是同一件事。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="search">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>站内搜索入口
+          <small>输入关键词，在热榜条目中快速定位</small>
+        </h2>
+      </div>
+      <form class="search-box" id="searchForm" role="search">
+        <input type="search" id="searchInput" placeholder="例如：声明、剪辑、账号互动" aria-label="搜索热榜条目">
+        <button type="submit">搜索</button>
+      </form>
+      <p class="result-hint" id="resultHint">输入关键词后点击搜索，结果来自上方热榜条目。</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl-band">
+        <div>
+          <h2>每日黑料大赛入口离线清单</h2>
+          <p>把当日热榜条目整理成一份清单，方便没有网络时回看。清单内容与页面展示一致，不含额外来源。当前下载地址尚未接入，按钮暂为不可用状态。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14" stroke="#1b1b26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="#top">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1b1b26" stroke="#2e2e3e"/>
+          <circle cx="24" cy="25" r="7.5" fill="#ff5c5c"/>
+          <circle cx="42" cy="37" r="7.5" fill="#ffd166"/>
+          <path d="M14 50c8-10 28-10 36 0" stroke="#ff5c5c" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>每日黑料大赛入口</span>
+      </a>
+      <div class="foot-links">
+        <a href="#entries">入口导航</a>
+        <a href="#hot">今日热榜</a>
+        <a href="#about">黑料看点</a>
+        <a href="#search">站内搜索</a>
+        <a href="#download">下载专区</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>每日黑料大赛入口为热点内容导航页，页面条目按展示顺序排列，不代表事实认定。涉及当事人的内容请以官方回应为准，理性吃瓜。</p>
+      <p>© 页面内容由本站整理，仅供浏览参考。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var links = document.getElementById('navLinks');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  });
+
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var hint = document.getElementById('resultHint');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.hot-list li'));
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = input.value.trim();
+    items.forEach(function(li){ li.style.display = ''; li.style.background = ''; });
+    if(!q){ hint.textContent = '请输入关键词后再搜索，结果来自上方热榜条目。'; return; }
+    var hits = items.filter(function(li){
+      return li.textContent.indexOf(q) !== -1;
+    });
+    if(hits.length){
+      items.forEach(function(li){ if(hits.indexOf(li) === -1){ li.style.display = 'none'; } });
+      hits.forEach(function(li){ li.style.background = 'rgba(255,92,92,.08)'; });
+      hint.innerHTML = '找到 <b>' + hits.length + '</b> 条与“' + q.replace(/[<>&]/g,'') + '”相关的热榜条目，已在上方高亮显示。';
+    }else{
+      hint.innerHTML = '热榜中没有匹配“' + q.replace(/[<>&]/g,'') + '”的条目，可以换个更短的关键词再试。';
+    }
+  });
+})();
+</script>
+</body>
+  </html>
